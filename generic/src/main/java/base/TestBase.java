@@ -1,7 +1,7 @@
 package base;
 
-import com.pnt.base.report.ExtentManager;
-import com.pnt.base.report.ExtentTestManager;
+import base.report.ExtentManager;
+import base.report.ExtentTestManager;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 import org.apache.commons.io.FileUtils;

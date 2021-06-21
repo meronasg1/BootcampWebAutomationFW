@@ -1,15 +1,15 @@
 package com.amazon.test;
-import base.report.ExtentManager;
-import base.report.ExtentTestManager;
+
 import base.TestBase;
+import base.report.ExtentTestManager;
 import com.amazon.pages.*;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.apache.log4j.Logger;
 
+public class NavigateToProductsTest extends TestBase {
 
-public class LoginTest extends TestBase {
 
     private static final Logger LOGGER = Logger.getLogger(LoginTest.class);
     CartPage cartPage;
@@ -30,24 +30,17 @@ public class LoginTest extends TestBase {
     }
 
     @Test
-    public void validateUserCanLogin(){
-        homePage.clickOnSignInButton();
-        loginPage.validateAmazonLogoFromLoginPage();
-        ExtentTestManager.log("clicked on sign in button", LOGGER);
+    public void validateUsercanNavigateToproducts(){
+        homePage.typeOnSearchBox("selenium books");
+        ExtentTestManager.log("Typed on search box", LOGGER);
+        homePage.clickOnSearchButton();
+        ExtentTestManager.log("Clicked on search button", LOGGER);
+        searchPage.clickOnSearchItem();
+        ExtentTestManager.log("Clicked on search item", LOGGER);
+        productPage.validateUserIsOnProductPage();
+        ExtentTestManager.log("Validated user is on product page", LOGGER);
 
-        loginPage.typeOnEmailOrMobilePhoneNumberField("pnttestu@gmail.com");
-        ExtentTestManager.log( "pnttestu@gmail.com entered in user name field", LOGGER);
-        loginPage.clickOnContinueButton();
-        ExtentTestManager.log("clicked on continue button", LOGGER);
-        loginPage.typeOnPasswordField("#root1234");
-        ExtentTestManager.log("#root1234 entered in password field ", LOGGER);
-
-        loginPage.clickOnSignInButton();
-        homePage.validateAmazonLogoFromHomepage();
-        ExtentTestManager.log("clicked on sign in button",LOGGER);
     }
-
-
 
 
 

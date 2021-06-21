@@ -2,6 +2,8 @@ package com.amazon.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 public class LoginPage {
 
@@ -32,6 +34,16 @@ public class LoginPage {
     public void clickOnSignInButton(){
         signInButton.click();
     }
+
+    @FindBy(xpath="//i[@class='a-icon a-icon-logo']")
+    private WebElement amazonLogoFromLoginPage;
+
+    public void validateAmazonLogoFromLoginPage(){
+        boolean actual = amazonLogoFromLoginPage.isDisplayed();
+        Assert.assertTrue(actual,"Amazon logo is not displayed from login page");
+    }
+
+
 
 
 
