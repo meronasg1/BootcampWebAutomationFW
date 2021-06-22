@@ -273,7 +273,6 @@ public class TestBase {
         driver.findElement(By.id(id)).click();
     }
 
-
     public void clickOnLinkText(String lnkTxt) {
         driver.findElement(By.linkText(lnkTxt)).click();
     }
@@ -285,6 +284,7 @@ public class TestBase {
     public void typeOnXpath(String xpath, String data) {
         driver.findElement(By.xpath(xpath)).sendKeys(data);
     }
+
 
 
 }
