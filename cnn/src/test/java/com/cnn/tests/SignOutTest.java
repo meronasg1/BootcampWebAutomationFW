@@ -18,6 +18,7 @@ public class SignOutTest extends TestBase {
     public void validateThatUserCanLogOut(){
         homePage.clickOnLoginBtn();
         homePage.clickOnLogoutBtn();
+        homePage.validateThatUserLoggedOutSuccessfully();
     }
 
 

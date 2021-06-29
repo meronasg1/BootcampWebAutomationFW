@@ -115,10 +115,15 @@ public class HomePage {
         ExtentTestManager.log("Clicked on logout button", LOGGER);
     }
 
-
-
-
-
+    public void validateThatUserLoggedOutSuccessfully(){
+        loginBtn.click();
+        if (loginLogoFromPopUp.isDisplayed()){
+            ExtentTestManager.log("validated that user logged out successfully", LOGGER);
+        }
+        else{
+            Assert.assertTrue(loginLogoFromPopUp.isDisplayed(),"Login logo is not displayed");
+        }
+    }
 
 
 }
